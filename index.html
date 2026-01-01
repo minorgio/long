@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+    <html lang="en"> 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>The goat web</title>
+            <style>
+                body {
+                    display:flex;
+                    width :100%;
+                    height :100vh;
+                    background :linear-gradient(#91476f,#ece6e6 210%);
+                    flex-direction:column;
+                    justify-content:flex-start;
+                    align-items:center;
+                    gap:20px;
+               }
+                #box-shadow{
+                   display:flex;
+                   background-color:#f1ebeb;
+                box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                width:500px;
+                min-height:100px;
+                border-radius:10px 40px;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                padding:20px;
+                margin-bottom:70px;
+                margin-top:10px;
+
+                    flex-direction:column;
+                    justify-content:center;
+                    align-items:center;
+                    gap:20px;
+               }
+               .sticker{
+                   display:block;
+                 width:200px;
+                height:auto;
+                margin-left:auto;
+                margin-right:auto;
+                border-radius:18px;
+                margin-bottom:15px;
+                object-fit:cover;
+                border:4px solid #0f060b;
+               }
+               h1{
+                font-size:60px;
+                color:rgb(0, 0, 0);
+                font-family: sans-serif;
+                margin:0;
+               }
+               button{
+                padding : 10px 20px;
+                width : 250px;
+                height : 100px;
+                font-size:30px;
+                border-radius: 10px;
+                background-color: rgb(247, 237, 245);
+                cursor : pointer;
+                font-family:sans-serif;
+                border:2px solid #0f060b;
+               }
+               button:hover{
+                background-color:#d6d5d6;
+                transform: scale(1.05);
+               }
+               .alert-centent{
+                background:rgb(255, 255, 255);
+                padding:40px;
+                text-align:center;
+                border-radius:12px;
+                box-shadow:0 10px 30px rgba(0,0,0,0.2);
+               }
+               #custom-alert,#custom-alert2{
+                display:none;
+                position:fixed;
+                top:0;left:0;
+                width:100%;
+                height:100%;
+                background: rgba(0,0,0,0.6);
+                justify-content:center;
+                align-items:center;
+                z-index:1000;
+               }
+               .alert-centent p{
+                font-family:sans-serif;
+                font-size:40px;
+                margin-bottom:20px;
+               }
+               .ok-btn{
+                background:rgb(255, 197, 197);
+                border :none;
+                padding : 10px 5px;
+                border-radius:5px;
+                cursor:pointer;
+                font-size:25px;
+                font-family:sans-serif;
+                width:150px;
+                height:50px;
+                justify-content:center;
+                align-items:center;
+               }
+               .alert-img{
+                width:200px;
+                height:auto;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                border-radius:18px;
+                margin-bottom:15px;
+                object-fit:cover;
+                border:4px solid #0f060b
+               }
+            .alert-img2{
+                display:block;
+                width:250px;
+                height:auto;
+                margin-left:auto;
+                margin-right:auto;
+                border-radius:18px;
+                margin-bottom:15px;
+                object-fit:cover;
+                border:4px solid #0f060b
+               }
+            </style>
+            </head>
+
+        <body>
+            <div class="box-shadow">
+                <h1> Welcome Ma'ma want to see something suprise?</h1>
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjRhbXg4ZzZmbzd5Z3h6Y3NuZnNkcWY4N29hcmdzcnF1NnVvdG5hbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/901mxGLGQN2PyCQpoc/giphy.gif"
+                class="sticker" alt="cat with gun">
+        </div>
+            <button onclick="showAlert()">Click It!!</button>
+            <div id="custom-alert">
+                 <div class ="alert-centent">
+                     <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExem83aTY3NmpyOTVjbTZlazF0aGt6MWY5bzN2c3dnZjh4MjBhODhyNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wr7oA0rSjnWuiLJOY5/giphy.gif"
+                      class="alert-img" alt="cat stairing face">
+                 <p>You sure you want to see the next one?</p>
+                         <button class="ok-btn" onclick="showsecondAlert()">Next</button>
+                        </div>
+                    </div>
+                    <div id="custom-alert2">
+                       <div class="alert-centent">
+                           <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZsa2VvMnV0NGI3YW95MHZ3M21jYnhiMzcyNHplZ2x0bng0b2UyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/In0Lpu4FVivjISX9HT/giphy.gif" 
+                           class="alert-img2" alt="cat w face">
+                           <p>Haha! I'm not finish YET!!!</p>
+                           <button class="ok-btn" onclick="closeAlert()">LoL</button>
+                       </div>
+                    </div>
+            <script>
+                function showAlert(){
+                    document.getElementById("custom-alert").style.display = 'flex';
+                    document.getElementById("custom-alert2").style.display='none';
+                }
+                function showsecondAlert(){
+                    document.getElementById("custom-alert").style.display ='none';
+                    document.getElementById("custom-alert2").style.display='flex';
+                }
+                function closeAlert(){
+                    document.getElementById("custom-alert2").style.display ='none';
+                    alert("You got scammed!!(:")
+                }
+
+            </script>
+        </body>
+    </html>
